@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+/*We have a number of bunnies and each bunny has two big floppy ears. 
+We want to compute the total number of ears across all the bunnies recursively 
+(without loops or multiplication).*/
+
+recBun(int n){
+
+    //Base cases
+    if(n==0){
+        return 0;
+    }
+    else if(n==1){
+        return 2;
+    }
+    //change state torwards base case
+    return 2 + recBun(n-1);
+}
+
+int main(){
+
+    int n;
+    cout << "Please enter the number of bunnies! " << endl;
+    cin >> n;
+    cout << recBun(n) << endl;
+    return 0;
+}
