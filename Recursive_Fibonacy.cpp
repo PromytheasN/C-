@@ -1,21 +1,21 @@
 #include <iostream>
 using namespace std;
 
-int recursion_fib (int n){
-
-    if (n >= 3)
-        return recursion_fib (n -1) + recursion_fib(n-2);
-    else 
+fibRec(int n){
+    if(n <= 0){
+        return 0;
+    }
+    if(n == 1 || n == 2){
         return 1;
-}
+    }
+    return fibRec(n-1) + fibRec(n-2);
 
+}
 int main(){
 
-    int num;
-    cout << "Please insert the Nth fibonacci you would like to find" << endl;
-
-    //Assume num is positive
-    cin >> num;
-    cout << "The value of the fib number in that location is: " << recursion_fib(num);
-
+    int n;
+    cout << "Please inser the Nth fibonacci sequance. " << endl;
+    cin >> n;
+    cout << "The " << n << "th fibonacci number is: " << fibRec(n) << endl;
+    return 0;
 }
