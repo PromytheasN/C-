@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+/*Given a non-negative int n, return the sum of its digits recursively (no loops). 
+Note that mod (%) by 10 yields the rightmost digit (126 % 10 is 6), 
+while divide (/) by 10 removes the rightmost digit (126 / 10 is 12).*/
+
+sumDig(int n){
+    if (n <= 10){
+        return n;
+    }
+    return n%10 + sumDig(n/10);
+}
+
+int main(){
+    int n;
+    cout << "Please insert a positive ingeter. " << endl;
+    cin >> n;
+    cout << "The sum of digits is. " << sumDig(n) << endl;
+    return 0;
+}
