@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+/*Given a string, compute recursively (no loops) a new string where all the 
+lowercase 'x' chars have been changed to 'y' chars.
+*/
+
+string changeXY(int i, string s){
+    //base case
+    if(i == s.size()-1){
+        if(s[i] == 'x' ){
+            s[i] = 'y';
+        }
+        return s;
+    }
+    //Recursion towards base case
+    if(s[i] == 'x'){
+        s[i] = 'y';
+    }
+    return changeXY(i+1, s);
+}
+
+int main(){
+    
+    string s = "a string x is a series of chars including x";
+    
+    cout << changeXY(0, s) << endl;
+    return 0;
+}
