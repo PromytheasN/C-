@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+/*excercise: https://codingbat.com/prob/p145416*/
+
+bool groupSum(int start, int * array, int target, int size){
+    //Base case
+    if(start == size){
+        return false;
+    }
+    if(target == 0){
+        return true;
+    }
+    groupSum(start+1, array, target, size);
+    groupSum(start+1, array, target - array[start], size);
+}
+
+
+int main(){
+
+    int anArray[] = {3,2,5,9,2};
+    int size = sizeof(anArray)/sizeof(anArray[0]);
+    cout << groupSum(0, anArray, 10, size) << endl;
+    return 0;
+}
