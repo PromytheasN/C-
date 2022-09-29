@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+/*Given an array of ints, compute recursively if the array contains a 6. 
+We'll use the convention of considering only the part of the array that begins at the given index. 
+In this way, a recursive call can pass index+1 to move down the array. 
+The initial call will pass in index as 0.*/
+
+bool array6Rec(int i,int size, const * anArray){
+
+    if(i == size){
+        return false;
+    }
+    if(anArray[i]==6){
+        return true;
+    }
+    return array6Rec(i+1, size, anArray);
+}
+
+int main(){
+
+    int anArray[] = {1,5,23,6,2};
+    int anArray2[] = {3, 32, 1, 5};
+    int size1 = sizeof(anArray)/sizeof(anArray[0]);
+    int size2 = sizeof(anArray2)/sizeof(anArray2[0]);
+    cout << array6Rec(0, size1, anArray) << endl;
+    cout << array6Rec(0, size2, anArray2) << endl;
+
+    return 0;
+}
